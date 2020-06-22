@@ -1,0 +1,32 @@
+code-check:
+  image: circleci/node:latest-browsers
+  before_script:
+    - npm i --registry https://registry.npm.taobao.org/ --no-optional
+  only:
+    - merge_requests
+  script:
+    - npm run lint
+  tags:
+    - testing
+
+build-image:
+  only:
+    refs:
+      - master
+  script:
+    - make build-image
+    - make push-image
+  tags:
+    - tlf101
+
+build-image-with-tag:
+  only:
+    refs:
+      - tags
+  variables:
+    VERSION: $CI_COMMIT_TAG
+  script:
+    - make build-image
+    - make push-image
+  tags:
+    - tlf101

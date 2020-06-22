@@ -1,0 +1,6 @@
+export DOCKER_REGION?=registry-vpc.cn-hangzhou.aliyuncs.com
+export DOCKER_NAMESPACE?=tealeaf
+export DASHBOARD_IMAGE_BASENAME?=home-page
+export VERSION?=latest
+
+export DASHBOARD_IMAGE:=${DOCKER_REGION}/${DOCKER_NAMESPACE}/${DASHBOARD_IMAGE_BASENAME}:${VERSION}

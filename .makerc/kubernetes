@@ -1,0 +1,6 @@
+export DASHBOARD_CONFIG_NAME?=tealeaf-dashboard-config
+export DASHBOARD_DEPLOY_NAME?=tealeaf-dashboard
+export DASHBOARD_SERVICE_NAME?=tealeaf-dashboard-service
+export DASHBOARD_INGRESS_NAME?=tealeaf-dashboard-ingress
+
+export K8S_DEPLOY_NODE?=k8s-master
